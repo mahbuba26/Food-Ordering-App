@@ -58,6 +58,7 @@ holder.del.setOnClickListener(new View.OnClickListener() {
         // String fAuth="lvrH8O8rm5eTJy2t6DNdCagJp7T2";
 
 
+
         String username=model.getStatus();
         //  String username =fAuth.getCurrentUser().getUid();
 
