@@ -1,44 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.cardview.widget.CardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-  android:background="#ECEAD9"
-
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="10dp"
-    android:layout_height="80dp">
-
-    <TextView
-        android:id="@+id/fullName"
+    app:cardCornerRadius="20dp"
+    app:cardBackgroundColor="#ECEAD9">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/userid"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="15dp"
-        android:textSize="15dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:text="name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="39dp" />
+        android:padding="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/userid"
-        android:textSize="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="6dp"
-        android:gravity="center"
-        android:text="id"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp" />
+        <TextView
+            android:id="@+id/fullName"
+            android:layout_width="390dp"
+            android:layout_height="43dp"
+            android:layout_above="@+id/userid"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="name"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.071" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/userid"
+            android:layout_width="385dp"
+            android:layout_height="28dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="id"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fullName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.127" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

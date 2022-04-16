@@ -8,9 +8,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.mahbuba.foodappnew.Model.Pointvalue;
-import com.mahbuba.foodappnew.ViewHolder.PointCartHolder;
-
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter {

@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CartActivity">
+
     <View
-        android:layout_width="0dp"
         android:id="@+id/view"
-        android:layout_height="350dp"
+        android:layout_width="0dp"
+        android:layout_height="380dp"
+        android:background="#00cba9"
         tools:ignore="MissingConstraints"
-        android:background="#00cba9"/>
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
         android:layout_width="409dp"
@@ -30,33 +33,34 @@
         android:textColor="@color/black"
         tools:ignore="MissingConstraints" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="336dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="330dp"
+        android:layout_marginTop="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="450dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.89"
         tools:layout_editor_absoluteX="53dp">
+
         <LinearLayout
-            android:layout_width="match_parent"
             android:id="@+id/tatal"
+            android:layout_width="match_parent"
             android:layout_height="50dp">
 
             <TextView
@@ -101,53 +105,46 @@
                 app:layout_constraintVertical_bias="0.649" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="69dp"
-            android:layout_marginBottom="186dp"
-            android:gravity="center"
-            android:hint="Address"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tatal"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.756"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp" />
 
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="110dp"
-            android:gravity="center"
-            android:hint="Phone No. "
-            android:inputType="number"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.877"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="0dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="204dp"
-            android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="352dp"
+            android:layout_height="133dp"
+            android:layout_below="@id/tatal"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="230dp"
-            android:layout_marginEnd="96dp"
-            android:layout_marginBottom="22dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="51dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="116dp"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="
+Please send money to :014******** through bKash and send the transaction ID in the next page."
+            android:textColor="@color/purple_700"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.276" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="111dp"
+            android:layout_marginTop="216dp"
+            android:layout_marginEnd="95dp"
+            android:layout_marginBottom="36dp"
             android:onClick="Confirm"
             android:text="Confirm"
             app:layout_constraintBottom_toBottomOf="parent"

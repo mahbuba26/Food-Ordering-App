@@ -88,11 +88,14 @@ public class Register extends AppCompatActivity {
 
 
                 if (TextUtils.isEmpty(fullName)) {
-                    mFullName.setError("Please Enter FullName ");
+                    mFullName.setError("Please Enter Your mobile no ");
                     return;
                 }
 
-
+                if(fullName.length() != 11){
+                    mFullName.setError("Phone number Must be 11 Characters");
+                    return;
+                }
 
                 if (cus.isChecked()) {
                     gender = "Customer";

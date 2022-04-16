@@ -8,32 +8,35 @@
     <View
         android:layout_width="0dp"
         android:id="@+id/view"
-        android:layout_height="350dp"
+        android:layout_height="380dp"
         tools:ignore="MissingConstraints"
         android:background="#00cba9"/>
 
+
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="409dp"
         android:layout_height="293dp"
         android:background="@drawable/ic_wave__4_"
+        app:layout_constraintTop_toBottomOf="@+id/view"
         tools:ignore="MissingConstraints,UnknownId"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="350dp"
-        app:layout_constraintTop_toBottomOf="@+id/view"/>
+        tools:layout_editor_absoluteX="2dp" />
+
     <TextView
+        android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Orders"
         android:gravity="center"
-        android:textStyle="italic"
-        android:textSize="26dp"
+        android:text="Orders"
         android:textColor="@color/black"
+        android:textSize="26dp"
+        android:textStyle="italic"
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="556dp"
+        android:layout_height="380dp"
         android:layout_marginTop="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,4 +44,83 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#ECEAD9"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <RelativeLayout
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="2dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="505dp">
+
+
+            <TextView
+                android:id="@+id/adddd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Address"
+                android:textColor="#041050"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/phonee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/adddd"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Phone"
+                android:textColor="#041050"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/sttta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/phonee"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="UserID"
+                android:textColor="#041050"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/dateee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sttta"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Date"
+                android:textColor="#041050"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

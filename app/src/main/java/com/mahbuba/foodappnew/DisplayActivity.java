@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.ExtractedTextRequest;
@@ -41,8 +42,9 @@ public class DisplayActivity extends AppCompatActivity {
 ImageView img;
 Button add;
     TextView item,price,shop;
-    TextView val;
+    EditText val;
     Integer va;
+    long Pieces;
     int count=0;
     String userID;
     FirebaseFirestore fStore;
@@ -73,6 +75,7 @@ Long pricee;
         item = findViewById(R.id.main_text_id);
         price = findViewById(R.id.main_text_name);
         val = findViewById(R.id.value);
+
         img = findViewById(R.id.image22);
         add = findViewById(R.id.materialButton);
       // long total= Integer.parseInt(tempUserName)*Integer.parseInt(va);
@@ -92,16 +95,27 @@ Long pricee;
                 String id = reference.push().getKey();
                 //    push=id;
             String i2=tempUserId;
+String pie=val.getText().toString();
+                if (TextUtils.isEmpty(pie)) {
+                    val.setError("Please enter number ...");
+                    return;
+                }
 
-              long Pieces = Long.valueOf(val.getText().toString());
+                Pieces = Long.valueOf(pie);
            //   long P= Long.parseLong(tempUserName);
                 long PP = new Long(tempUserName);
 //Long P=pricee*Pieces;
+
+
               long P=Pieces*PP;
 //price , piece int and multiple
 
                 //long x = Long.parseLong(sdf.format(new Date()));
-long x= Long.parseLong(sdf.format(new Date()));
+                Calendar c = Calendar.getInstance();
+                //  System.out.println("Current time => "+c.getTime());
+
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String x= (sdf.format(c.getTime()));
             /*    PointValue pointvalue = new PointValue(x,i, Pieces, P);
 
                 reference.child(String.valueOf(id)).setValue(pointvalue);
@@ -113,13 +127,12 @@ long x= Long.parseLong(sdf.format(new Date()));
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
+                            PointValue pointvalue = new PointValue(x, i2, Pieces, P);
 
-                        PointValue pointvalue = new PointValue(x,i2, Pieces, P);
+                            reference.child(String.valueOf(id)).setValue(pointvalue);
 
-                        reference.child(String.valueOf(id)).setValue(pointvalue);
-
-                        Toast.makeText(DisplayActivity.this, "Added in your cart !", Toast.LENGTH_SHORT).show();
-                    }
+                            Toast.makeText(DisplayActivity.this, "Added in your cart !", Toast.LENGTH_SHORT).show();
+              }
                 });
                 b.setNegativeButton(("No"), new DialogInterface.OnClickListener() {
                     @Override

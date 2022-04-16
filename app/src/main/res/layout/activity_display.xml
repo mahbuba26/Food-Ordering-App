@@ -6,6 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DisplayActivity">
+    <View
+        android:layout_width="0dp"
+        android:id="@+id/view"
+        android:layout_height="380dp"
+        tools:ignore="MissingConstraints"
+        android:background="#00cba9"/>
+
+    <ImageView
+        android:layout_width="409dp"
+        android:layout_height="293dp"
+        android:background="@drawable/ic_wave__4_"
+        tools:ignore="MissingConstraints,UnknownId"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="350dp"
+        app:layout_constraintTop_toBottomOf="@+id/view"/>
 
     <TextView
         android:id="@+id/textView5"
@@ -118,11 +133,10 @@
         app:layout_constraintVertical_bias="0.837"
         tools:ignore="MissingConstraints" />
 
-    <TextView
+    <EditText
         android:id="@+id/value"
         android:layout_width="61dp"
         android:layout_height="63dp"
-        android:text=" 0 "
         android:textSize="30dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"

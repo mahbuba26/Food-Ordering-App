@@ -10,29 +10,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="766dp"
             android:background="@drawable/hd"
-            >
+            android:orientation="vertical">
+
             <pl.droidsonroids.gif.GifImageView
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="160dp"
                 android:layout_margin="16dp"
                 android:layout_marginBottom="20dp"
                 android:onClick="ClickLogo"
-                android:src="@drawable/tenor2"/>
+                android:src="@drawable/tenor2" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" Foody Door"
-                android:textStyle="bold"
-                android:textSize="20sp"
                 android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal"
+                android:text=" Foody Door"
                 android:textAlignment="center"
                 android:textColor="@color/purple_700"
-                android:gravity="center_horizontal" />
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
@@ -42,25 +44,22 @@
                 android:background="@drawable/tenor" />
 
 
-
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:onClick="ClickHome"
-                >
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Home"
-                    android:padding="12dp"
-                    android:textStyle="bold"
                     android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp" />
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="Home"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -72,58 +71,82 @@
             </LinearLayout>
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:onClick="ClickAboutUs"
-                >
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Claim admin"
-                    android:textStyle="bold"
-                    android:padding="12dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp" />
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="Claim admin"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="48dp"
-                    android:src="@drawable/ic_chat"
-                    android:layout_marginRight="48dp" />
+                    android:layout_marginRight="48dp"
+                    android:src="@drawable/ic_chat" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="ClickHelp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="Help &amp; Support"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="48dp"
+                    android:layout_marginRight="48dp"
+                    android:src="@drawable/ic_baseline_help_center_24" />
 
             </LinearLayout>
 
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
                 android:onClick="ClickLogout"
-                >
+                android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Logout"
-                    android:padding="12dp"
-                    android:textStyle="bold"
                     android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp" />
+                    android:layout_marginLeft="16dp"
+                    android:layout_weight="1"
+                    android:padding="12dp"
+                    android:text="Logout"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="48dp"
-                    android:src="@drawable/ic_logout"
-                    android:layout_marginRight="48dp" />
+                    android:layout_marginRight="48dp"
+                    android:src="@drawable/ic_logout" />
 
             </LinearLayout>
 

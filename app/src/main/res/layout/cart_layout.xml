@@ -3,16 +3,32 @@
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="160dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="10dp"
     app:cardCornerRadius="20dp"
     app:cardBackgroundColor="#ECEAD9">
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:text="&#8942;"
+        android:textSize="20sp"
+        android:id="@+id/txt_option"
+        android:layout_gravity="right"
+        />
+    <ImageView
+        android:layout_height="32dp"
+        android:id="@+id/delete"
+        android:layout_gravity="right"
+        android:layout_width="32dp"/>
     <RelativeLayout
         android:id="@+id/card_view"
         android:padding="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <TextView
             android:id="@+id/data_id2"
@@ -21,10 +37,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:text="Item"
             android:textColor="#041050"
             android:textSize="10sp" />
+
 
         <TextView
             android:id="@+id/data_name2"
@@ -34,7 +50,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+
             android:text="Pieces"
             android:textColor="#041050"
             android:textSize="10sp" />
@@ -47,8 +63,21 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+
             android:text="Price"
+            android:textColor="#041050"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/data_age2"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+
+            android:text="Date"
             android:textColor="#041050"
             android:textSize="10sp" />
     </RelativeLayout>

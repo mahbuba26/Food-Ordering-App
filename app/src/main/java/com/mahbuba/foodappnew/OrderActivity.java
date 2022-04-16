@@ -226,7 +226,9 @@ public class OrderActivity extends AppCompatActivity {
     public void ClickHome(View view){
         recreate();
     }
-
+public void ClickHelp(View view){
+    redirectActivity(this,HelpCenter.class);
+}
 
     public void ClickAboutUs(View view){
 

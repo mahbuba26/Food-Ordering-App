@@ -1,7 +1,7 @@
 package com.mahbuba.foodappnew;
 
 public class PointValue {
-   long Date;
+   String Date;
     String Item;
     Long Pieces;
     Long Price;
@@ -9,15 +9,19 @@ public class PointValue {
 
     public PointValue(){}
 
-    public PointValue(long x, String y, Long id, Long total){
+    public PointValue(String x, String y, Long id, Long total){
         this.Date=x;
         this.Item=y;
         this.Pieces=id;
         this.Price=total;
     }
 
-    public long getDate() {
+    public String getDate() {
         return Date;
+    }
+
+    public void setDate(String date) {
+        Date = date;
     }
 
     public Long getPieces() {
@@ -47,10 +51,6 @@ public class PointValue {
     }
 
 
-
-    public void setDate(long date) {
-        Date = date;
-    }
 
 
 

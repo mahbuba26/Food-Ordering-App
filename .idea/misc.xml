@@ -11,31 +11,58 @@
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.215625" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/drawable/image_border.xml" value="0.215625" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_about_us.xml" value="0.19947916666666668" />
-        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_add_item.xml" value="0.25" />
-        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_cart.xml" value="0.2" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_add.xml" value="0.2" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_add_item.xml" value="0.22" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_cart.xml" value="0.25" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_cartretry.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_confirm.xml" value="0.25" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_display.xml" value="0.22" />
-        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_honda.xml" value="0.12" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_existing_add_item.xml" value="0.19947916666666668" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_help_center.xml" value="0.25" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_honda.xml" value="0.22" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_list_view.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_option.xml" value="0.19947916666666668" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_order.xml" value="0.25" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_order_history.xml" value="0.22" />
-        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_project.xml" value="0.19010416666666666" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_project.xml" value="0.2" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_search.xml" value="0.19947916666666668" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/activity_user_list_id.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/cart_layout.xml" value="0.25" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/cart_layout.xml" value="0.24838012958963282" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/history_layout.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/honda_model.xml" value="0.33" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/honda_model.xml" value="0.25" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/item_view_category.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/item_view_categorydata.xml" value="0.33" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/layout_catogory_item.xml" value="0.25" />
-        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/main_nav_drawer.xml" value="0.33" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/main_nav_drawer.xml" value="0.15" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/main_toolbar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/layout/output_address.xml" value="0.2" />
+        <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/menu/option_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Android Studio Projects/22/FoodAppNew/app/src/main/res/menu/search.xml" value="0.33" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/drawable-v24/rounded_shape.xml" value="0.23177083333333334" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_about_us.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_add.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_add_item.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_cart.xml" value="0.2" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_confirm.xml" value="0.25" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_display.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_existing_add_item.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_help_center.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_honda.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_login.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_main.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_option.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_order.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_project.xml" value="0.25" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_register.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_rider.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/activity_rider_in.xml" value="0.2015625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/cart_layout.xml" value="0.33" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/honda_model.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/item_view_category.xml" value="0.215625" />
+        <entry key="..\:/New folder/FoodAppNew/app/src/main/res/layout/rider_latout.xml" value="0.5" />
       </map>
     </option>
   </component>

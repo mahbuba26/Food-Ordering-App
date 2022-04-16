@@ -9,9 +9,9 @@ public class CategoryData {
 
     public CategoryData() {
     }
-    public CategoryData(String image, String item, String price,String shop) {
+    public CategoryData(String image, String Item, String price,String shop) {
         this.Image = image;
-        this.Item = item;
+        this.Item = Item;
         this.Price = price;
         this.Shop=shop;
     }

@@ -63,7 +63,8 @@ public class AddItem extends AppCompatActivity {
             public void onClick(View view) {
                 uploadItem=new UploadItem(cat.getText().toString()
                         ,categorydata);
-
+             //   String id = reference.push().getKey();
+           //     reference.child(String.valueOf(id)).setValue(pointvalue);
                 reference.child(cat.getText().toString()).setValue(uploadItem);
             }
         });

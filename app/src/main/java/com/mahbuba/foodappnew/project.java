@@ -7,33 +7,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.mahbuba.foodappnew.Model.Pointvalue;
 import com.mahbuba.foodappnew.ViewHolder.PointCartHolder;
+import com.mahbuba.foodappnew.databinding.ActivityMainBinding;
 
 import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Map;
 
 public class project extends AppCompatActivity {
     RecyclerView re;
-    EditText address, phone;
+
+    ActivityMainBinding binding;
     TextView pr;
     String g_id;
-    List<FetchData> fetchData;
-    CartAdapter adapter;
+TextView adddress, status,phne,dat;
     FirebaseDatabase database;
     DatabaseReference reference, rrefer;
     FirebaseAuth fAuth;
@@ -42,32 +37,72 @@ public class project extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(R.layout.activity_project);
 
         database = FirebaseDatabase.getInstance();
         fAuth = FirebaseAuth.getInstance();
         Intent intent = getIntent();
-        address = findViewById(R.id.address);
-        phone = findViewById(R.id.phone);
+        adddress = findViewById(R.id.adddd);
+        status = findViewById(R.id.sttta);
+       phne= findViewById(R.id.phonee);
+       dat = findViewById(R.id.dateee);
+
+
         pr = findViewById(R.id.pricee);
 
         g_id=intent.getStringExtra("userid");
+       String userId = fAuth.getCurrentUser().getUid();
 
-        FirebaseUser user = fAuth.getCurrentUser();
-       // String userID = user.getUid();
         String userID = g_id;
         reference = database.getReference(userID);
+        rrefer = database.getReference("Address");
 
 //        rrefer= (DatabaseReference) reference.orderByChild("date").equalTo(x);
         re = findViewById(R.id.recycler);
         re.setLayoutManager(new LinearLayoutManager(this));
                                       //value choto hater
-        FirebaseRecyclerOptions<Pointvalue> options = new FirebaseRecyclerOptions.Builder<Pointvalue>().
-                setQuery(reference, Pointvalue.class).build();
+        FirebaseRecyclerOptions<PointValue> options = new FirebaseRecyclerOptions.Builder<PointValue>().
+                setQuery(reference, PointValue.class).build();
 
 
         ph = new PointCartHolder(options);
         re.setAdapter(ph);
+
+
+
+        rrefer.child(userID).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                if (task.isSuccessful()){
+
+                    if (task.getResult().exists()){
+
+
+                        DataSnapshot dataSnapshot = task.getResult();
+                        String address = String.valueOf(dataSnapshot.child("address").getValue());
+                        String date = String.valueOf(dataSnapshot.child("date").getValue());
+                        String phone = String.valueOf(dataSnapshot.child("phone").getValue());
+                        String statuss = String.valueOf(dataSnapshot.child("status").getValue());
+                        adddress.setText("Address : "+ address);
+                       status.setText("UserID  : "+ statuss);
+                        phne.setText("Phone   : "+ phone);
+                        dat.setText("Date    : "+ date);
+
+
+                    }else {
+
+                        Toast.makeText(project.this,"Address Info not found ",Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+                }else {
+
+                 //   Toast.makeText(project.this,"Failed to read",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
 
 

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.mahbuba.foodappnew.Interface.SubCategoryOnClickInterface;
@@ -24,6 +27,7 @@ public class ActivityHonda extends AppCompatActivity {
     private FirebaseFirestore firestore;
 
 private RecyclerView mfirestore;
+DatabaseReference r;
 private  FirestoreRecyclerAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,13 +63,35 @@ holder.id.setText(model.getUserID());
                 holder.SubCategoryInterfaceClick(new SubCategoryOnClickInterface() {
                     @Override
                     public void onClick(View view, boolean isLongPressed) {
-                        Intent intent = new Intent(ActivityHonda.this,project.class);
-                        intent.putExtra("fname",model.getfName());
-                        intent.putExtra("userid",model.getUserID());
+                        r=FirebaseDatabase.getInstance().getReference(model.getUserID());
+                        if(r!=null){
 
-                        startActivity(intent);
+                            Intent intent = new Intent(ActivityHonda.this, project.class);
+                            intent.putExtra("fname", model.getfName());
+                            intent.putExtra("userid", model.getUserID());
+
+                            startActivity(intent);
+                        }
+                        else {
+                            view.setBackgroundColor(Color.GREEN);
+                        }
+                        /*holder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                row_index=position;
+                notifyDataSetChanged();
+            }
+        });
+
+        if (row_index==position) {
+            holder.linearLayout.setBackgroundColor(Color.RED);
+        } else {
+            holder.linearLayout.setBackgroundColor(Color.parseColor("#dddddd"));
+        }*/
                     }
                 });
+
+
             }
         };
 

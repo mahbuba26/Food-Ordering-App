@@ -36,4 +36,9 @@ EditText secu;
                 Toast.makeText( AboutUs.this,"Security code is not verified !!!", Toast.LENGTH_SHORT).show();
             }
     }
+
+    public void rider(View view) {
+        Intent intent=new Intent(AboutUs.this,Rider_In.class);
+        startActivity(intent);
+    }
 }
