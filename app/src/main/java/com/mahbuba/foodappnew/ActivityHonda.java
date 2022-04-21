@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -27,23 +28,20 @@ public class ActivityHonda extends AppCompatActivity {
     private FirebaseFirestore firestore;
 
 private RecyclerView mfirestore;
-DatabaseReference r;
-private  FirestoreRecyclerAdapter adapter;
+DatabaseReference r,reference;
+private  FirebaseRecyclerAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_honda);
-firestore=FirebaseFirestore.getInstance();
-
+//firestore=FirebaseFirestore.getInstance();
+        reference = FirebaseDatabase.getInstance().getReference("Address");
         mfirestore=findViewById(R.id.honda);
 
+        FirebaseRecyclerOptions<HondaModel> options = new FirebaseRecyclerOptions.Builder<HondaModel>().
+                setQuery(reference, HondaModel.class).build();
 
-        Query query= firestore.collection("registration")
-;
-
-    FirestoreRecyclerOptions<HondaModel> options =new FirestoreRecyclerOptions.Builder<HondaModel>().setQuery(query,HondaModel.class).build();
-
-        adapter= new FirestoreRecyclerAdapter<HondaModel, HondaViewHolder>(options) {
+        adapter= new FirebaseRecyclerAdapter<HondaModel, HondaViewHolder>(options) {
             @NonNull
             @Override
             public HondaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -57,39 +55,24 @@ View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.honda_model
 
             @Override
             protected void onBindViewHolder(@NonNull HondaViewHolder holder, int position, @NonNull HondaModel model) {
-holder.name.setText(model.getfName());
-holder.id.setText(model.getUserID());
+holder.name.setText(model.getPhone());
+holder.id.setText(model.getStatus());
 
                 holder.SubCategoryInterfaceClick(new SubCategoryOnClickInterface() {
                     @Override
                     public void onClick(View view, boolean isLongPressed) {
-                        r=FirebaseDatabase.getInstance().getReference(model.getUserID());
-                        if(r!=null){
+                        r = FirebaseDatabase.getInstance().getReference(model.getStatus());
+                        if (r != null) {
 
                             Intent intent = new Intent(ActivityHonda.this, project.class);
-                            intent.putExtra("fname", model.getfName());
-                            intent.putExtra("userid", model.getUserID());
+                            intent.putExtra("fname", model.getPhone());
+                            intent.putExtra("userid", model.getStatus());
 
                             startActivity(intent);
-                        }
-                        else {
+                        } else {
                             view.setBackgroundColor(Color.GREEN);
                         }
-                        /*holder.linearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                row_index=position;
-                notifyDataSetChanged();
-            }
-        });
-
-        if (row_index==position) {
-            holder.linearLayout.setBackgroundColor(Color.RED);
-        } else {
-            holder.linearLayout.setBackgroundColor(Color.parseColor("#dddddd"));
-        }*/
-                    }
-                });
+                    } });
 
 
             }

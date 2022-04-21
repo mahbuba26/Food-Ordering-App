@@ -22,9 +22,6 @@
             android:name=".RiderActivity"
             android:exported="false" />
         <activity
-            android:name=".ActivityAdd"
-            android:exported="false" />
-        <activity
             android:name=".ExistingAddItem"
             android:exported="false" />
         <activity

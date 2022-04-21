@@ -15,13 +15,26 @@
         android:background="#00cba9"/>
 
     <ImageView
+        android:id="@+id/imageView6"
         android:layout_width="409dp"
         android:layout_height="293dp"
         android:background="@drawable/ic_wave__4_"
+        app:layout_constraintTop_toBottomOf="@+id/view"
         tools:ignore="MissingConstraints,UnknownId"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="350dp"
-        app:layout_constraintTop_toBottomOf="@+id/view"/>
+        tools:layout_editor_absoluteX="2dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Want to add more than 1 item in a category . Add to sublist  after each food, then final upload .You can add later in the previous page later."
+        android:textColor="@color/purple_700"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        tools:layout_editor_absoluteX="20dp" />
 
     <TextView
         android:id="@+id/main_category"
@@ -36,8 +49,7 @@
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
-
+        app:layout_constraintVertical_bias="0.161" />
 
     <EditText
         android:id="@+id/category_id"
@@ -63,10 +75,9 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.244"
+        app:layout_constraintVertical_bias="0.301"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -122,12 +133,14 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20dp"
         app:layout_constraintTop_toBottomOf="@+id/cat_price" />
+
     <Button
         android:id="@+id/btn_add_to_subList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add to SubList"
         android:layout_margin="20dp"
+        android:layout_marginTop="16dp"
+        android:text="Add to SubList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cat_shop" />

@@ -1,22 +1,35 @@
 package com.mahbuba.foodappnew;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mahbuba.foodappnew.Model.CategoryData;
 
 import java.util.ArrayList;
 
 public class ExistingAddItem extends AppCompatActivity {
-    EditText cat;
+    TextView cat;
     EditText img,itm,prc,shp;
-
+    Spinner ap;
+    ArrayList<String> spin;
+    ValueEventListener listener;
+    DatabaseReference ref;
+    ArrayAdapter<String> adap;
     Button sublist,upload;
     DatabaseReference reference;
     FirebaseDatabase database;
@@ -36,9 +49,43 @@ public class ExistingAddItem extends AppCompatActivity {
         itm = findViewById(R.id.cat_item);
         prc = findViewById(R.id.cat_price);
         shp = findViewById(R.id.cat_shop);
-        upload = findViewById(R.id.btn_final_upload);
         sublist = findViewById(R.id.btn_add_to_subList);
 
+        ap=findViewById(R.id.spinner);
+        ref= FirebaseDatabase.getInstance().getReference("Category");
+        spin=new ArrayList<String>();
+        adap=new ArrayAdapter<String>(ExistingAddItem.this,android.R.layout.simple_spinner_dropdown_item,spin);
+
+        ap.setAdapter(adap);
+        ap.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String item=spin.get(i);
+                String item2=ap.getSelectedItem().toString();
+                cat.setText(item);
+                // Toast.makeText(MainActivity.this, item, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        listener =   ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot mydata : snapshot.getChildren())
+
+                    spin.add(mydata.getValue().toString());
+
+                adap.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         //Firebase init
         database = FirebaseDatabase.getInstance();
@@ -73,5 +120,11 @@ public class ExistingAddItem extends AppCompatActivity {
         itm.setText("");
         prc.setText("");
         shp.setText("");
+        cat.setText("");
+    }
+
+    public void addnew(View view) {
+        Intent i=new Intent(ExistingAddItem.this,AddItem.class);
+        startActivity(i);
     }
 }

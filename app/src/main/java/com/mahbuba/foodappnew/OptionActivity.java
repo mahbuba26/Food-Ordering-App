@@ -16,7 +16,7 @@ public class OptionActivity extends AppCompatActivity {
 
     public void add(View view) {
 
-        Intent intent=new Intent(OptionActivity.this,AddItem.class);
+        Intent intent=new Intent(OptionActivity.this,ExistingAddItem.class);
         startActivity(intent);
     }
 

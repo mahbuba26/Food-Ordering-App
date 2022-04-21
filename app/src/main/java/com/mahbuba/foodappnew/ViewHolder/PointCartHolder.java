@@ -22,7 +22,7 @@ public class PointCartHolder extends FirebaseRecyclerAdapter<PointValue,PointCar
 
     //private Context context;
     DatabaseReference reference,reference2;
-FirebaseAuth fAuth;
+    FirebaseAuth fAuth;
     public PointCartHolder(@NonNull FirebaseRecyclerOptions<PointValue> options) {
         super(options);
 
@@ -43,7 +43,7 @@ FirebaseAuth fAuth;
             }
         });*/
 
-        holder.txt_option.setOnClickListener(v->
+   /*     holder.txt_option.setOnClickListener(v->
         {
             PopupMenu popupMenu =new PopupMenu(v.getContext(), holder.txt_option);
             popupMenu.inflate(R.menu.option_menu);
@@ -57,12 +57,12 @@ FirebaseAuth fAuth;
                         String username =fAuth.getCurrentUser().getUid();
                         if (!username.isEmpty()){
 
-                             FirebaseDatabase.getInstance().getReference()
+                            FirebaseDatabase.getInstance().getReference()
                                     .child(username)
                                     .child(getRef(position).getKey())
                                     .setValue(null);
 
-                        //    reference2.removeValue();
+                            //    reference2.removeValue();
 
                         }
 
@@ -75,8 +75,8 @@ FirebaseAuth fAuth;
     }
 
 
-
-   // }
+*/
+     }
 
     @NonNull
     @Override
@@ -88,18 +88,18 @@ FirebaseAuth fAuth;
     }
 
     class myViewHolder extends  RecyclerView.ViewHolder{
-            TextView Item , Price, Piece,Date;
-            ImageView txt_option;
+        TextView Item , Price, Piece,Date;
+    //    ImageView txt_option;
 
-            public myViewHolder(@NonNull final View itemView) {
-                super(itemView);
-                Date=itemView.findViewById(R.id.data);
-                Item = (TextView) itemView.findViewById(R.id.data_id2);
-                Piece = (TextView)itemView.findViewById(R.id.data_name2);
-                Price=(TextView)itemView.findViewById(R.id.data_age2);
-                txt_option = itemView.findViewById(R.id.delete);
+        public myViewHolder(@NonNull final View itemView) {
+            super(itemView);
+            Date=itemView.findViewById(R.id.data);
+            Item = (TextView) itemView.findViewById(R.id.data_id2);
+            Piece = (TextView)itemView.findViewById(R.id.data_name2);
+            Price=(TextView)itemView.findViewById(R.id.data_age2);
+          //  txt_option = itemView.findViewById(R.id.delete);
 
-            }
+        }
     }
 
 }

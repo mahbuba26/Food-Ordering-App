@@ -9,7 +9,6 @@
     app:cardCornerRadius="20dp"
     app:cardBackgroundColor="#ECEAD9">
 
-
     <RelativeLayout
         android:id="@+id/card_view"
         android:padding="2dp"
@@ -69,5 +68,9 @@
             android:text="Date"
             android:textColor="#041050"
             android:textSize="10sp" />
+
+
     </RelativeLayout>
+
+
 </androidx.cardview.widget.CardView>

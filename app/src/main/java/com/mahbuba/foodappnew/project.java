@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mahbuba.foodappnew.ViewHolder.PointCartHolder;
+import com.mahbuba.foodappnew.ViewHolder.PointCartHolder2;
 import com.mahbuba.foodappnew.databinding.ActivityMainBinding;
 
 import java.text.SimpleDateFormat;
@@ -33,7 +35,7 @@ TextView adddress, status,phne,dat;
     DatabaseReference reference, rrefer;
     FirebaseAuth fAuth;
     SimpleDateFormat sdf = new SimpleDateFormat("dd");
-    PointCartHolder ph;
+    PointCartHolder2 ph;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +68,7 @@ TextView adddress, status,phne,dat;
                 setQuery(reference, PointValue.class).build();
 
 
-        ph = new PointCartHolder(options);
+        ph = new PointCartHolder2(options);
         re.setAdapter(ph);
 
 
@@ -122,6 +124,26 @@ TextView adddress, status,phne,dat;
     }
 
 
+    public void click(View view) {
+        // reference.child(username).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+        reference.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+                if (task.isSuccessful()){
+
+                    Toast.makeText(project.this,"Successfuly Cleared !",Toast.LENGTH_SHORT).show();
+                    //    binding.etusername.setText("");
 
 
+                }else {
+
+                    Toast.makeText(project.this,"Something went wrong ! Try again .",Toast.LENGTH_SHORT).show();
+
+
+                }
+
+            }
+        });
+    }
 }

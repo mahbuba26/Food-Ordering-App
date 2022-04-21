@@ -18,7 +18,7 @@ public class AddItem extends AppCompatActivity {
     EditText img,itm,prc,shp;
 
     Button sublist,upload;
-    DatabaseReference reference;
+    DatabaseReference reference, ref2;
     FirebaseDatabase database;
 
     CategoryData categoryData;
@@ -42,7 +42,7 @@ public class AddItem extends AppCompatActivity {
         //Firebase init
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("Foods");
-        
+        ref2 = database.getReference("Category");
         
         sublist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +66,10 @@ public class AddItem extends AppCompatActivity {
              //   String id = reference.push().getKey();
            //     reference.child(String.valueOf(id)).setValue(pointvalue);
                 reference.child(cat.getText().toString()).setValue(uploadItem);
+                String id = ref2.push().getKey();
+                ref2.child(id).setValue(cat.getText().toString());
+                categorydata.clear();
+                cat.setText("");
             }
         });
 
@@ -81,4 +85,6 @@ public class AddItem extends AppCompatActivity {
        prc.setText("");
         shp.setText("");
     }
+
+
 }

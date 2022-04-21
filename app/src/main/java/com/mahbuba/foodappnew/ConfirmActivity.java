@@ -279,7 +279,8 @@ private LocationRequest locationRequest;
 
 
         ref2.child(userID).setValue(addressClass);
-        Toast.makeText(ConfirmActivity.this,"Your orders have been submitted . It will reach within half an hour :-)",Toast.LENGTH_SHORT).show();
+        Toast.makeText(ConfirmActivity.this,"Your orders have been submitted . We will reach you soon :-)",Toast.LENGTH_SHORT).show();
 
     }
+
 }

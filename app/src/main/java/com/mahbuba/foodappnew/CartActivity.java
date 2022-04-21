@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -54,7 +56,7 @@ public class CartActivity extends AppCompatActivity {
         String userID = user.getUid();
 
 
-        reference = database.getReference(userID);
+        reference = database.getReference("order").child(userID);
 
 
         re = findViewById(R.id.rv);
@@ -74,6 +76,7 @@ public class CartActivity extends AppCompatActivity {
 
         ph = new PointCartHolder(options);
         re.setAdapter(ph);
+
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -132,5 +135,28 @@ AddressClass addressClass=new AddressClass(x,addd,phnn,status);
         Intent intent = new Intent(CartActivity.this, ConfirmActivity.class);
 
         startActivity(intent);
+        reference.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+                if (task.isSuccessful()){
+
+                    Toast.makeText(CartActivity.this,"Successfuly Cleared !",Toast.LENGTH_SHORT).show();
+                    //    binding.etusername.setText("");
+
+
+                }else {
+
+                    Toast.makeText(CartActivity.this,"Something went wrong ! Try again .",Toast.LENGTH_SHORT).show();
+
+
+                }
+
+            }
+        });
+
     }
+
+
+
 }

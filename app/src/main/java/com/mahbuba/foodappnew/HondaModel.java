@@ -3,28 +3,29 @@ package com.mahbuba.foodappnew;
 public class HondaModel {
 
 //4 static extraa
-    private  String fName;
-    private  String userID;
+    private  String status;
+    private  String phone;
     public HondaModel() {
 
     }
-    public HondaModel(String fName,String userID) {
-        this.fName = fName;
-        this.userID = userID;
-    }
-    public  String getfName() {
-        return fName;
+    public HondaModel(String status,String phone) {
+        this.status = status;
+        this.phone = phone;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public String getStatus() {
+        return status;
     }
 
-    public  String getUserID() {
-        return userID;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

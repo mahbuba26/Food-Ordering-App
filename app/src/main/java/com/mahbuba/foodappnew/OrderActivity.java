@@ -63,7 +63,7 @@ public class OrderActivity extends AppCompatActivity {
         reference = database.getReference("Foods");
         manager = new LinearLayoutManager(this);
 
-        AlertDialog.Builder b=new AlertDialog.Builder(OrderActivity.this);
+/*        AlertDialog.Builder b=new AlertDialog.Builder(OrderActivity.this);
         b.setTitle("Confirmation");
         b.setMessage("Please clean your cart before proceed !!!");
         b.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -93,7 +93,7 @@ public class OrderActivity extends AppCompatActivity {
                 Toast.makeText(OrderActivity.this, " ", Toast.LENGTH_SHORT).show();
             }
         });  */
-        b.show();
+   //     b.show();
 
 
 

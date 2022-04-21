@@ -50,7 +50,7 @@ Button add;
     FirebaseFirestore fStore;
     public String Image;
     FirebaseDatabase database;
-    DatabaseReference reference;
+    DatabaseReference reference,ref2;
     FirebaseAuth fAuth;
     SimpleDateFormat sdf = new SimpleDateFormat("dd");
 Long pricee;
@@ -89,10 +89,12 @@ Long pricee;
                 String userID = user.getUid();
             //    database = FirebaseDatabase.getInstance().getReference().child(userID);
                 reference = database.getReference(userID);
+                ref2 = database.getReference("order").child(userID);
                 //userID = fAuth.getCurrentUser().getUid();
                 Random r = new Random();
                 //int id = Integer.parseInt(sdf.format(new Date()));
                 String id = reference.push().getKey();
+                String id2 = ref2.push().getKey();
                 //    push=id;
             String i2=tempUserId;
 String pie=val.getText().toString();
@@ -130,6 +132,7 @@ String pie=val.getText().toString();
                             PointValue pointvalue = new PointValue(x, i2, Pieces, P);
 
                             reference.child(String.valueOf(id)).setValue(pointvalue);
+                        ref2.child(String.valueOf(id2)).setValue(pointvalue);
 
                             Toast.makeText(DisplayActivity.this, "Added in your cart !", Toast.LENGTH_SHORT).show();
               }
