@@ -15,7 +15,9 @@
 * Firebase
 
 ## App Description
-Successfully delivered in-depth health information including Body Mass Index (BMI), Basal Metabolic Rate (BMR), and customized calorie requirements through the creation of a user-focused Android app using Java. This accomplishment was made possible by emphasizing user-friendly design and ease of access. Furthermore, achieved accurate monitoring and management of data within the app, ensuring precise tracking of users' daily calorie consumption, through the skillful implementation of a specific feature. This success was a result of meticulous attention to detail and proficient use of Java programming skills.[(Details in Github)](https://github.com/mahbuba26/FoodAppNew)
+A comprehensive Android app utilizing Java and Firebase, integrating a user-friendly interface, a robust admin dashboard, the user behavior
+monitoring and customizable rider features to enhance student engagement and facilitate interactive learning experiences.(Details in Github)
+
 
 ![Food App Demo](/order1.png)
 This is the basic layout of my food ordering app, illustrating the interaction between various components. It highlights the main page interface, as well as features such as how the admin can communicate with the shop owner and other key functionalities.
